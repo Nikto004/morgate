@@ -1,0 +1,158 @@
+WindowManager:
+    LoginScreen:
+    RegisterScreen:
+
+
+<LoginScreen>:
+    name: "Login"
+    MDCard:
+        size_hint: None, None
+        size: 300, 400
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            id: colors
+            markup: True
+            text: "[ref=]Регистрация[/ref]"
+            font_size: "16sp"
+
+            halign: "right"
+            size_hint_y: None
+            height: self.texture_size[1]
+            color: "000000"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open(app.register())
+        MDLabel:
+            id: Welcome_label
+            text: "Вход"
+            font_size: 30
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+        MDTextFieldRound:
+            id: user
+            hint_text: "Email/ номер телефона"
+            icon_left: "account"
+            mode: "fill"
+            # icon_right: 'eye-off'
+            size_hint_x: None
+            width: 200
+            normal_color: 'white'
+            pos_hint: {"center_x": 0.5}
+        MDTextFieldRound:
+            id: password
+            hint_text: "Пароль"
+            icon_left: "lock"
+            icon_right: 'eye-off'
+            size_hint_x: None
+            width: 200
+            normal_color: 'white'
+            pos_hint: {"center_x": 0.5}
+            password: True
+        MDRoundFlatButton:
+            text: "Войти"
+            font_size: 18
+            pos_hint: {"center_x": 0.5}
+            size_hint_x: 0.9
+            on_press: app.root.current = "registr"
+        MDLabel:
+            markup: True
+            text: '[ref=]Не помню пароль[/ref]'
+            font_size:12
+            halign: "center"
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+            color: "#FF4D00"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("google.com")
+
+        #Изменение Виджетов на экране
+        Widget:
+            size_hint_y: None
+            height: 0
+
+<RegisterScreen>:
+    name:"registr"
+    MDCard:
+        size_hint: None, None
+        size: 300, 400
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+        MDLabel:
+            id: Welcome_label
+            text: "Вход"
+            font_size: 30
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+        MDTextFieldRound:
+            id: user
+            hint_text: "Email/ номер телефона"
+            icon_left: "account"
+            mode: "fill"
+            # icon_right: 'eye-off'
+            size_hint_x: None
+            width: 200
+            normal_color: 'white'
+            pos_hint: {"center_x": 0.5}
+        MDTextFieldRound:
+            id: password
+            hint_text: "Пароль"
+            icon_left: "lock"
+            icon_right: 'eye-off'
+            size_hint_x: None
+            width: 200
+            normal_color: 'white'
+            pos_hint: {"center_x": 0.5}
+            password: True
+        MDRoundFlatButton:
+            text: "Войти"
+            font_size: 18
+            pos_hint: {"center_x": 0.5}
+            size_hint_x: 0.9
+            on_press: app.root.current = "Login"
+        MDLabel:
+            markup: True
+            text: '[ref=]Не помню пароль[/ref]'
+            font_size:12
+            halign: "center"
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+            color: "#FF4D00"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("google.com")
+        MDLabel:
+            id: colors
+            markup: True
+            text: "Нет аккаунта? [ref=]Зарегистрироваться[/ref]"
+            font_size:12
+            halign: "center"
+            size_hint_y: None
+            height: self.texture_size[1]
+            color: "000000"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open(app.register())
+
+        #Изменение Виджетов на экране
+        Widget:
+            size_hint_y: None
+            height: 0
+
+
+            
+
